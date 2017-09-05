@@ -80,6 +80,7 @@ components:
         token:
           type: string
           example: eyJHbGc...
+          readOnly: true
     User:
       required:
         - email
