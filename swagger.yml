@@ -1,0 +1,116 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Onepanel API
+servers:
+  - url: 'http://c.onepanel.io/api'
+paths:
+  /sessions:
+    put:
+      summary: Log in user
+      operationId: updateSession
+      tags:
+        - sessions
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '200':
+          description: User object including UIDs
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '401':
+          description: Unauthorized
+        '422':
+          description: Missing required property
+  /accounts/{accountUID}/projects:
+    get:
+      summary: Get a list of projects
+      operationId: createAccount
+      tags:
+        - projects
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Array of projects
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Project'
+        '404':
+          description: No projects found
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    Session:
+      required:
+        - device
+      properties:
+        device:
+          type: string
+          enum:
+            - web
+            - android
+            - ios
+        token:
+          type: string
+          example: eyJHbGc...
+    User:
+      required:
+        - email
+        - password
+        - sessions
+      properties:
+        uid:
+          type: string
+          example: username
+          readOnly: true
+        email:
+          type: string
+          example: info@onepanel.io
+        password:
+          type: string
+          example: securePassword
+        sessions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Session'
+        account:
+          readOnly: true
+          type: object
+          $ref: '#/components/schemas/Account'
+    Account:
+      required:
+        - name
+        - users
+      properties:
+        uid:
+          type: string
+          example: onepanel
+          readOnly: true
+        name:
+          type: string
+          example: onepanel
+          readOnly: true
+    Project:
+      properties:
+        uid:
+          type: string
+        instanceCount: 
+          type: integer
+          example: 3
+        jobCount:
+          type: integer
+          example: 2
