@@ -11,7 +11,7 @@ http://petstore.swagger.io/?url=https://raw.githubusercontent.com/onepanelio/spe
 
 ### Commands
 
-#### `onepanel-cli login`
+#### `onepanel login`
 
 Prompts for (both required):
 
@@ -37,7 +37,7 @@ Incorrect username or password
 ```
 
 
-#### `onepanel-cli projects list`
+#### `onepanel projects list`
 
 If there are projects present:
 
