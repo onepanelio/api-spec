@@ -36,6 +36,21 @@ Upon a `422` response from API, the following message should be displayed:
 Incorrect username or password
 ```
 
+#### `onepanel projects create`
+
+Prompts for (both required):
+
+```bash
+Name (<put current directory name here as default>):
+Where should the project be created?
+  1. Current directory
+  2. New directory within current directory
+Choose 1 or 2: 
+```
+
+If 1, create a `.onepanel-project` file with `uid` of project in it.
+If 2, create a new directory and then create a `.onepanel-project` file with `uid` in it.
+
 
 #### `onepanel projects list`
 
