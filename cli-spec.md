@@ -7,7 +7,7 @@ http://click.pocoo.org/5/
 
 ### API Specification
 
-http://petstore.swagger.io/?url=https://raw.githubusercontent.com/onepanelio/specs/master/swagger.yml
+http://editor.swagger.io/?url=https://raw.githubusercontent.com/onepanelio/api-spec/master/swagger.yml
 
 ### Commands
 
