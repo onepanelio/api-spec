@@ -72,7 +72,7 @@ paths:
                 $ref: '#/components/schemas/Project'
     get:
       summary: Get a list of projects
-      operationId: createAccount
+      operationId: getProjects
       tags:
         - projects
       security:
@@ -148,11 +148,10 @@ components:
           readOnly: true
     Project:
       required:
-        - name
+        - uid
       properties:
         uid:
           type: string
-          readOnly: true
         name:
           type: string
         instanceCount:
