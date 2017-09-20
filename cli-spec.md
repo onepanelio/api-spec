@@ -48,8 +48,20 @@ Where should the project be created?
 Choose 1 or 2: 
 ```
 
-If 1, create a `.onepanel-project` file with `uid` of project in it.
-If 2, create a new directory and then create a `.onepanel-project` file with `uid` in it.
+Note that `Name` currently maps to `uid` in API and requires the following validation:
+
+- 3 to 25 characters
+- Alphanumeric characters or '-', must start and end with an alphanumeric character (regex: /^[a-z0-9]([-a-z0-9]*[a-z0-9])?$/)
+
+If 1, create a `.onepanel-project`.
+If 2, create a new directory and then create a `.onepanel-project`
+
+content of `.onepanel-project`:
+
+```yml
+uid: <project.uid>
+account_uid: <account.uid>
+```
 
 
 #### `onepanel projects list`
