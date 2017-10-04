@@ -63,6 +63,11 @@ uid: <project.uid>
 account_uid: <account.uid>
 ```
 
+#### `onepanel projects get <account_uid>/<uid>`
+
+This command clones project from `https://git.onepanel.io/<account_uid>/<uid>` into a sub-directory in current directory named `<uid>` and then creates a `.onepanel-project` file with the appropriate values.
+
+if a `.` is passed as an argument, then the project is cloned in the current directory and NOT a sub-directory.
 
 #### `onepanel projects list`
 
