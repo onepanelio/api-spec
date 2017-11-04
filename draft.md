@@ -9,7 +9,7 @@ Authentication header: Authorization: Bearer <jwt-token>
 
 ##### CLI 
 
-command: `onepanel jobs create --machine-type=<machine-type-uid> --environment=<instance-template-uid>`
+command: `onepanel jobs create --machine-type=<machine-type-uid> --environment=<instance-template-uid> '<command>'`
 response: <job_uid>
 
 
@@ -19,7 +19,7 @@ URL: /accounts/<account_uid>/projects/<project_uid>/jobs
 Request example:
 ```
 {
-  "command": "ls .",
+  "command": "python mnist.py",
   "machineType": {
     "uid": "aws-shared"
   },
