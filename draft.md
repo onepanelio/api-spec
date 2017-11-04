@@ -3,6 +3,28 @@
 Host: https://c.onepanel.io/api
 Authentication header: Authorization: Bearer <jwt-token>
 
+
+## Commands Overview
+
+### Jobs
+
+- [Create a Job](#create-a-job)
+- [Get Job Log](#get-job-log)
+- [Stop a job](#stop-a-job)
+
+### Applications
+
+- [Create an Application](#create-a-job)
+- [Terminate an Application](#stop-a-job)
+
+### Machine Types
+
+- [Get Machine Types](#get-machine-type)
+
+### Environments
+
+- [Get Environments](#get-environments)
+
 ## Jobs
 
 #### Create a Job
