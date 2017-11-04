@@ -70,13 +70,78 @@ Response body example:
 
 ## Machine Types
 
+### List Machine Types
+
+#### CLI 
+
+Command: `onepanel machine_types list`
+
+Response: 
+```
+ ID               SPECS 
+ aws-cpu-1        CPU: 2, RAM: 7GB      
+ aws-p2.xlarge    GPU: 1, CPU: 4, RAM: 60GB
+```
+
+
+#### API Request and Response
+Request: GET /machine_types
+
+Response example:
+
+```
+[
+    {
+        "uid": "aws-shared",
+        "name": "CPU: 0.5, RAM: 860MB",
+        "info": {
+            "cpu": "0.5",
+            "ram": "860MB"
+        },
+        "resources": {
+            "cpu": "400m",
+            "memory": "860Mi"
+        },
+        "cloudProvider": "aws"
+    },
+    {
+        "uid": "aws-cpu-1",
+        "name": "CPU: 2, RAM: 7GB",
+        "info": {
+            "cpu": "2",
+            "ram": "7GB"
+        },
+        "resources": {
+            "cpu": "1750m",
+            "memory": "7Gi"
+        },
+        "cloudProvider": "aws"
+    },
+    {
+        "uid": "aws-p2.xlarge",
+        "name": "GPU: 1, CPU: 4, RAM: 60GB",
+        "info": {
+            "cpu": "4",
+            "gpu": "1",
+            "ram": "60GB"
+        },
+        "resources": {
+            "cpu": "3500m",
+            "gpu": "1",
+            "memory": "59Gi"
+        },
+        "cloudProvider": "aws"
+    }
+]
+```
+
 ## Environments
 
 ### List Environments
 
 #### CLI 
 
-Command: `onepanel machine_types list`
+Command: `onepanel environments list`
 
 Response: 
 ```
