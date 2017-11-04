@@ -10,6 +10,7 @@ Authentication header: Authorization: Bearer <jwt-token>
 ##### CLI 
 
 command: `onepanel jobs create --machine-type=<machine-type-uid> --environment=<instance-template-uid> '<command>'`
+
 response: <job_uid>
 
 
