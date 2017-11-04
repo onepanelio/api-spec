@@ -19,11 +19,11 @@ Authentication header: Authorization: Bearer <jwt-token>
 
 ### Machine Types
 
-- [Get Machine Types](#get-machine-type)
+- [List Machine Types](#list-machine-type)
 
 ### Environments
 
-- [Get Environments](#get-environments)
+- [List Environments](#list-environments)
 
 ## Jobs
 
@@ -72,7 +72,7 @@ Response body example:
 
 ## Environments
 
-### Get Environments
+### List Environments
 
 #### CLI 
 
