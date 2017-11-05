@@ -8,6 +8,7 @@ Authentication header: Authorization: Bearer <jwt-token>
 
 ### Jobs
 
+- [List Jobs](#list-jobs)
 - [Create a Job](#create-a-job)
 - [Get Job Log](#get-job-log)
 - [Stop a job](#stop-a-job)
@@ -26,6 +27,49 @@ Authentication header: Authorization: Bearer <jwt-token>
 - [List Environments](#list-environments)
 
 ## Jobs
+
+### List Jobs
+
+#### CLI 
+
+Command: `onepanel jobs list [--all]`
+
+Response: 
+```
+ ID                                      COMMAND 
+ 0f9053b8-6d18-4385-91c5-10ca2183da8e    python mnist.py      
+ e8f8dded-4794-4e6c-aee2-fc716cf93aac    python main.py
+```
+
+#### API Request and Response
+Request (default): GET /accounts/<account_uid>/projects/<project_uid>/jobs?running=true
+Request (--all): GET /accounts/<account_uid>/projects/<project_uid>/jobs
+
+Response body example:
+
+```
+[
+    {
+        "uid": "0f9053b8-6d18-4385-91c5-10ca2183da8e",
+        "command": "wget -q --load-cookies cookies.txt https://www.kaggle.com/c/cdiscount-image-classification-challenge/download/test.bson -P ../trainingset -nd && python predict.py",
+        "startTime": null,
+        "completionTime": null,
+        "active": 0,
+        "succeeded": 1,
+        "failed": 0,
+        "isRunning": true,
+    },
+    {
+        "uid": "e8f8dded-4794-4e6c-aee2-fc716cf93aac",
+        "command": "wget --load-cookies cookies.txt https://www.kaggle.com/c/cdiscount-image-classification-challenge/download/test.bson -P ../trainingset -nd && python predict.py",
+        "startTime": null,
+        "completionTime": null,
+        "active": 0,
+        "succeeded": 1,
+        "failed": 0,
+        "isRunning": true,
+]
+```
 
 ### Create a Job
 
