@@ -43,6 +43,7 @@ Response:
 
 #### API Request and Response
 Request (default): GET /accounts/<account_uid>/projects/<project_uid>/jobs?running=true
+
 Request (--all): GET /accounts/<account_uid>/projects/<project_uid>/jobs
 
 Response body example:
